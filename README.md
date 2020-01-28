@@ -1,2 +1,2 @@
-# azlyricscrapper
+# AZLyric Scrapper
 A scrapper for AZLyrics written in Go
