@@ -27,9 +27,9 @@ go to the cloned folder
 go run main.go
 ```
 
-### Test
+### Example
 
-/search?song=Avicii Somewhere in Stokholm
+**/search?song=Avicii Somewhere in Stokholm**
 
 ```
 response 
