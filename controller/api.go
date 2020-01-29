@@ -66,7 +66,7 @@ func GetLyrics(url string) interface{} {
 
          if vals[0] != nil {
             
-            lyrics := model.Lyric{vals[3].(string), vals[2].(string), vals[1].(string), vals[0].(string)}
+            lyrics := model.Lyric{vals[2].(string), vals[1].(string), vals[0].(string), vals[3].(string)}
         
             ttl, _ := time.ParseDuration("24h")
             client.Expire(url, ttl) 
