@@ -8,8 +8,8 @@ This repo is a scrapper for azlyrics that exposes an http server, with one endpo
 
 ## Built With
 
-* [Golang](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Redis](https://maven.apache.org/) - To Cache frequent requests
+* [Golang](https://golang.org/) - The programming alnguage used
+* [Redis](https://redis.io/) - To Cache frequent requests
 
 ### Installing
 
