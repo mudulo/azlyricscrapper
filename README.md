@@ -4,7 +4,7 @@ A Scrapper for AZLyrics written in Go
 
 ## Getting Started
 
-This repo is a scrapper for azlyrics that exposes an http server, with one endpoint /search which expects a get parameter for the "artist, song description" and then returns lyrics, 
+This repo is a scrapper for azlyrics that exposes an http endpoint , with one endpoint /search which expects a get parameter for the "artist, song description (no specific order or delimiters since this is a search query)" and then returns lyrics, 
 
 ## Built With
 
