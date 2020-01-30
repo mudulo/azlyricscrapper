@@ -9,7 +9,7 @@ This repo is a scrapper for azlyrics that exposes an http server, with one endpo
 ## Built With
 
 * [Golang](https://golang.org/) - The programming alnguage used
-* [Redis](https://redis.io/) - To Cache frequent requests
+* [Redis](https://redis.io/) - To Cache frequent requests for max 24 hours
 
 ### Installing
 
