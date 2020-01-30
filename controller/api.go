@@ -12,6 +12,7 @@ import (
     "github.com/PuerkitoBio/goquery"
     "golyrics/model"
     "time"
+    "jaytaylor.com/html2text"
 )
 
 var client = redis.NewClient(&redis.Options{
@@ -107,13 +108,20 @@ func GetLyrics(url string) interface{} {
                 copyright = strings.TrimSpace(strings.Split(copyright, "<br/>")[0])
             }
              
-            body, err := doc.Find(".ringtone ~ div").Html()
+            html, err := doc.Find(".ringtone ~ div").Html()
             if err != nil {
                 response := model.ErrorResponse{404, "Could not find lyrics"}
                 return response;
             } else {
+                text, err := html2text.FromString(html, html2text.Options{PrettyTables: false})
+                
+                if err != nil {
 
-                lyrics := model.Lyric{title, artist_feat, body, copyright}
+                }  else {
+
+                } 
+
+                lyrics := model.Lyric{title, artist_feat, text, copyright}
                 client.HMSet(url, structs.Map(lyrics));
                 ttl, _ := time.ParseDuration("24h")
                 client.Expire(url, ttl)
