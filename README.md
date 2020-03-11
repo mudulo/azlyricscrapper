@@ -4,12 +4,14 @@ A Scrapper for AZLyrics written in Go
 
 ## Getting Started
 
-This repo is a scrapper for azlyrics that exposes an http endpoint , with one endpoint **/search?song=[song description]** which expects a get parameter for the "artist, song description (no specific order or delimiters since this is a search query)" and then returns lyrics, 
+This is a scrapper for azlyrics that exposes an http endpoint , with one endpoint **/search?song=[song description]** which expects a get parameter for the "artist, song description (no specific order or delimiters since this is a search query)" and then returns lyrics, 
 
 ## Built With
 
 * [Golang](https://golang.org/) - The programming alnguage used
-* [Redis](https://redis.io/) - To Cache frequent requests for max 24 hours
+* [Redis](https://redis.io/) - To Cache frequent requests, for 24 hours. This is implemented such that if a given lyric request (page) has been served, the reponse body is cached, set to expire in 24 hours. Then for every subsequent request for the same resets the expiry to 24 hours.
+
+Consequently if the page is not requested again for 24 hours, the key expires in Redis and will only be stored again if it is requested.
 
 ### Installing
 

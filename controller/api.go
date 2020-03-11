@@ -114,9 +114,9 @@ func GetLyrics(url string) interface{} {
                 return response;
             } else {
                 text, err := html2text.FromString(html, html2text.Options{PrettyTables: false})
-                
-                if err != nil {
 
+                if err != nil {
+                    
                 }  else {
 
                 } 
